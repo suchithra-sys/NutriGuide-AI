@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriGuide AI – Personalized AI Nutrition Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- =====================================================================
+       PROFILE SETUP MODAL
+       Shown on first visit. Saves to localStorage.
+  ====================================================================== -->
+  <div id="profile-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="logo-icon">🥗</span>
+        <h2>Welcome to NutriGuide AI</h2>
+        <p>Your personalized AI nutrition guidance tool</p>
+        <p class="modal-sub">Tell us about yourself to get started</p>
+      </div>
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="p-age">Age</label>
+          <input type="number" id="p-age" min="10" max="100" placeholder="e.g. 25" required />
+        </div>
+        <div class="form-group">
+          <label for="p-weight">Weight (kg)</label>
+          <input type="number" id="p-weight" min="20" max="300" placeholder="e.g. 70" required />
+        </div>
+        <div class="form-group">
+          <label for="p-goal">Your Goal</label>
+          <select id="p-goal" required>
+            <option value="">Select a goal…</option>
+            <option value="lose weight">Lose Weight</option>
+            <option value="maintain weight">Maintain Weight</option>
+            <option value="gain weight">Gain Weight</option>
+            <option value="build muscle">Build Muscle</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="p-diet">Diet Preference</label>
+          <select id="p-diet" required>
+            <option value="">Select preference…</option>
+            <option value="vegan">Vegan</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="non-veg">Non-Vegetarian</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Get Started</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       APP SHELL
+  ====================================================================== -->
+  <div id="app">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <span class="logo-icon">🥗</span>
+          <div>
+            <h1>NutriGuide AI</h1>
+            <span class="header-sub">Powered by IBM Granite · watsonx.ai</span>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm" id="edit-profile-btn">
+          ✏️ <span id="profile-label">My Profile</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="chat">💬 Chat</button>
+      <button class="tab-btn" data-tab="mealplan">📋 Meal Plan</button>
+      <button class="tab-btn" data-tab="recommend">✅ Recommendations</button>
+      <button class="tab-btn" data-tab="foodlog">📓 Food Log</button>
+      <button class="tab-btn" data-tab="health">🛡️ Health Guidance</button>
+      <button class="tab-btn" data-tab="dashboard">📊 Dashboard</button>
+    </nav>
+
+    <!-- Tab Panels -->
+    <main class="tab-content">
+
+      <!-- ----------------------------------------------------------------
+           TAB 1: Nutrition Chat (Nutrition Knowledge Agent)
+      ----------------------------------------------------------------- -->
+      <section id="tab-chat" class="tab-panel active">
+        <div class="panel-header">
+          <h2>💬 Nutrition Knowledge Chat</h2>
+          <p class="panel-desc">Ask any nutrition or food question. Powered by the <strong>Nutrition Knowledge Agent</strong> with RAG over our food dataset.</p>
+        </div>
+        <div class="chat-window" id="chat-window">
+          <div class="chat-message assistant">
+            <div class="bubble">
+              👋 Hello! I'm NutriGuide AI. Ask me anything about nutrition, food, macros, or healthy eating — I'll give you grounded, personalized guidance.
+            </div>
+          </div>
+        </div>
+        <form class="chat-input-row" id="chat-form">
+          <input
+            type="text"
+            id="chat-input"
+            class="chat-input"
+            placeholder="e.g. What are the best high-protein vegan foods?"
+            autocomplete="off"
+          />
+          <button type="submit" class="btn btn-primary" id="chat-send-btn">Send</button>
+        </form>
+      </section>
+
+      <!-- ----------------------------------------------------------------
+           TAB 2: Meal Plan (Diet Recommendation Agent)
+      ----------------------------------------------------------------- -->
+      <section id="tab-mealplan" class="tab-panel">
+        <div class="panel-header">
+          <h2>📋 One-Day Meal Plan</h2>
+          <p class="panel-desc">Get a personalized one-day meal plan based on your profile. Powered by the <strong>Diet Recommendation Agent</strong>.</p>
+        </div>
+        <div class="profile-chip" id="mealplan-profile-chip"></div>
+        <button class="btn btn-primary btn-lg" id="generate-mealplan-btn">
+          🍽️ Generate My Meal Plan
+        </button>
+        <div class="result-box hidden" id="mealplan-result"></div>
+      </section>
+
+      <!-- ----------------------------------------------------------------
+           TAB 3: Food Recommendations (Diet Recommendation Agent)
+      ----------------------------------------------------------------- -->
+      <section id="tab-recommend" class="tab-panel">
+        <div class="panel-header">
+          <h2>✅ Healthy Food Recommendations</h2>
+          <p class="panel-desc">Get a personalized list of foods to eat and avoid for your goal. Powered by the <strong>Diet Recommendation Agent</strong>.</p>
+        </div>
+        <div class="profile-chip" id="recommend-profile-chip"></div>
+        <button class="btn btn-primary btn-lg" id="generate-recommend-btn">
+          🔍 Get My Recommendations
+        </button>
+        <div class="result-box hidden" id="recommend-result"></div>
+      </section>
+
+      <!-- ----------------------------------------------------------------
+           TAB 4: Food Log (Food Log & Feedback Agent)
+      ----------------------------------------------------------------- -->
+      <section id="tab-foodlog" class="tab-panel">
+        <div class="panel-header">
+          <h2>📓 Food Log & Feedback</h2>
+          <p class="panel-desc">Log your meals and get AI feedback on your nutritional balance. Powered by the <strong>Food Log & Feedback Agent</strong>.</p>
+        </div>
+
+        <!-- Add food form -->
+        <div class="card log-add-card">
+          <h3>Add a Food Entry</h3>
+          <div class="log-form-row">
+            <div class="form-group flex-1">
+              <label for="log-food-name">Food Name</label>
+              <input type="text" id="log-food-name" placeholder="e.g. Chicken Breast" list="food-suggestions" autocomplete="off" />
+              <datalist id="food-suggestions"></datalist>
+            </div>
+            <div class="form-group w-100">
+              <label for="log-grams">Amount (g)</label>
+              <input type="number" id="log-grams" min="1" max="2000" placeholder="100" value="100" />
+            </div>
+            <div class="form-group align-end">
+              <button class="btn btn-primary" id="log-add-btn">+ Add</button>
+            </div>
+          </div>
+          <div class="log-lookup-info hidden" id="log-lookup-info"></div>
+        </div>
+
+        <!-- Log entries table -->
+        <div class="card" id="log-table-card">
+          <h3>Today's Log <span class="muted" id="log-date"></span></h3>
+          <div id="log-empty" class="empty-state">No entries yet. Add your first meal above!</div>
+          <table class="log-table hidden" id="log-table">
+            <thead>
+              <tr>
+                <th>Food</th>
+                <th>Amount</th>
+                <th>Calories</th>
+                <th>Protein</th>
+                <th>Carbs</th>
+                <th>Fat</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="log-tbody"></tbody>
+            <tfoot>
+              <tr id="log-totals-row" class="totals-row">
+                <td colspan="2"><strong>Totals</strong></td>
+                <td id="total-cal">—</td>
+                <td id="total-pro">—</td>
+                <td id="total-carb">—</td>
+                <td id="total-fat">—</td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <!-- Feedback -->
+        <div class="card" id="log-feedback-card">
+          <h3>AI Nutritional Feedback</h3>
+          <button class="btn btn-primary" id="get-feedback-btn">🤖 Get Feedback on Today's Log</button>
+          <div class="result-box hidden" id="feedback-result"></div>
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------------------
+           TAB 5: Health Guidance (Health Advisory Agent)
+      ----------------------------------------------------------------- -->
+      <section id="tab-health" class="tab-panel">
+        <!-- Persistent disclaimer banner -->
+        <div class="disclaimer-banner">
+          ⚠️ <strong>Disclaimer:</strong> NutriGuide AI provides general wellness and nutrition information only.
+          This is <strong>NOT</strong> medical diagnosis, medical advice, or treatment.
+          Always consult a qualified healthcare professional before making health decisions.
+        </div>
+
+        <div class="panel-header">
+          <h2>🛡️ Preventive Health Guidance</h2>
+          <p class="panel-desc">Get evidence-based, diet-related wellness tips. Powered by the <strong>Health Advisory Agent</strong>.</p>
+        </div>
+
+        <!-- Quick topic buttons -->
+        <div class="topic-chips">
+          <button class="chip" data-topic="heart health and diet">❤️ Heart Health</button>
+          <button class="chip" data-topic="improving gut health through diet">🦠 Gut Health</button>
+          <button class="chip" data-topic="boosting immunity with nutrition">🛡️ Immunity</button>
+          <button class="chip" data-topic="managing blood sugar through food choices">🩸 Blood Sugar</button>
+          <button class="chip" data-topic="bone health and calcium rich foods">🦴 Bone Health</button>
+          <button class="chip" data-topic="reducing inflammation through diet">🔥 Inflammation</button>
+        </div>
+
+        <div class="health-input-row">
+          <input
+            type="text"
+            id="health-topic-input"
+            class="text-input"
+            placeholder="Or type your own health topic…"
+          />
+          <button class="btn btn-primary" id="health-ask-btn">Ask</button>
+        </div>
+
+        <div class="result-box hidden" id="health-result"></div>
+      </section>
+
+      <!-- ----------------------------------------------------------------
+           TAB 6: Dashboard
+      ----------------------------------------------------------------- -->
+      <section id="tab-dashboard" class="tab-panel">
+        <div class="panel-header">
+          <h2>📊 Nutrition Dashboard</h2>
+          <p class="panel-desc">Visual summary of today's food log. Updates automatically as you add entries.</p>
+        </div>
+
+        <div id="dashboard-empty" class="empty-state">
+          No food log entries yet. Go to the <strong>Food Log</strong> tab to add your meals.
+        </div>
+
+        <div id="dashboard-charts" class="hidden">
+          <div class="charts-grid">
+            <div class="chart-card">
+              <h3>Macro Split (today)</h3>
+              <p class="chart-sub">Protein · Carbs · Fat</p>
+              <div class="chart-container">
+                <canvas id="macro-chart"></canvas>
+              </div>
+            </div>
+            <div class="chart-card">
+              <h3>Calorie Intake vs. Goal</h3>
+              <p class="chart-sub">Based on your profile goal</p>
+              <div class="chart-container">
+                <canvas id="calorie-chart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary stats -->
+          <div class="stats-row" id="dashboard-stats"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>NutriGuide AI · Problem Statement No. 8 – Nutrition Agent · IBM Granite via watsonx.ai</p>
+      <p class="muted">This tool provides general nutrition guidance only and is not a substitute for professional medical advice.</p>
+    </footer>
+
+  </div><!-- /#app -->
+
+  <script src="app.js"></script>
+</body>
+</html>

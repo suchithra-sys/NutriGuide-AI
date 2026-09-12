@@ -1,0 +1,14 @@
+{
+  "name": "nutriguide-ai",
+  "version": "1.0.0",
+  "description": "NutriGuide AI – Personalized AI Nutrition Assistant powered by IBM Granite via watsonx.ai",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}

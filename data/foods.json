@@ -1,0 +1,502 @@
+[
+  {
+    "name": "Brown Rice",
+    "category": "Grain",
+    "calories_per_100g": 216,
+    "protein_g": 4.5,
+    "carbs_g": 45,
+    "fat_g": 1.8,
+    "fiber_g": 3.5,
+    "tags": ["whole-grain", "vegan", "gluten-free", "complex-carbs", "energy"]
+  },
+  {
+    "name": "White Rice",
+    "category": "Grain",
+    "calories_per_100g": 204,
+    "protein_g": 4.2,
+    "carbs_g": 44,
+    "fat_g": 0.4,
+    "fiber_g": 0.6,
+    "tags": ["grain", "vegan", "energy", "easy-digest"]
+  },
+  {
+    "name": "Oats",
+    "category": "Grain",
+    "calories_per_100g": 389,
+    "protein_g": 17,
+    "carbs_g": 66,
+    "fat_g": 7,
+    "fiber_g": 10,
+    "tags": ["whole-grain", "vegan", "high-fiber", "heart-healthy", "breakfast", "cholesterol-lowering"]
+  },
+  {
+    "name": "Whole Wheat Bread",
+    "category": "Grain",
+    "calories_per_100g": 247,
+    "protein_g": 9,
+    "carbs_g": 43,
+    "fat_g": 3.4,
+    "fiber_g": 6,
+    "tags": ["whole-grain", "vegan", "high-fiber", "breakfast"]
+  },
+  {
+    "name": "Quinoa",
+    "category": "Grain",
+    "calories_per_100g": 120,
+    "protein_g": 4.1,
+    "carbs_g": 21,
+    "fat_g": 1.9,
+    "fiber_g": 2.8,
+    "tags": ["whole-grain", "vegan", "complete-protein", "gluten-free", "weight-loss"]
+  },
+  {
+    "name": "Lentils",
+    "category": "Legume",
+    "calories_per_100g": 116,
+    "protein_g": 9,
+    "carbs_g": 20,
+    "fat_g": 0.4,
+    "fiber_g": 8,
+    "tags": ["high-protein", "high-fiber", "vegan", "vegetarian", "iron-rich", "weight-loss"]
+  },
+  {
+    "name": "Chickpeas",
+    "category": "Legume",
+    "calories_per_100g": 164,
+    "protein_g": 8.9,
+    "carbs_g": 27,
+    "fat_g": 2.6,
+    "fiber_g": 7.6,
+    "tags": ["high-protein", "high-fiber", "vegan", "vegetarian", "iron-rich", "weight-loss"]
+  },
+  {
+    "name": "Black Beans",
+    "category": "Legume",
+    "calories_per_100g": 132,
+    "protein_g": 8.9,
+    "carbs_g": 24,
+    "fat_g": 0.5,
+    "fiber_g": 8.7,
+    "tags": ["high-protein", "high-fiber", "vegan", "vegetarian", "antioxidant-rich"]
+  },
+  {
+    "name": "Tofu",
+    "category": "Legume",
+    "calories_per_100g": 76,
+    "protein_g": 8,
+    "carbs_g": 1.9,
+    "fat_g": 4.8,
+    "fiber_g": 0.3,
+    "tags": ["high-protein", "vegan", "vegetarian", "low-carb", "calcium-rich", "weight-loss"]
+  },
+  {
+    "name": "Edamame",
+    "category": "Legume",
+    "calories_per_100g": 121,
+    "protein_g": 11,
+    "carbs_g": 8.9,
+    "fat_g": 5.2,
+    "fiber_g": 5.2,
+    "tags": ["high-protein", "vegan", "vegetarian", "snack", "complete-protein"]
+  },
+  {
+    "name": "Chicken Breast",
+    "category": "Meat",
+    "calories_per_100g": 165,
+    "protein_g": 31,
+    "carbs_g": 0,
+    "fat_g": 3.6,
+    "fiber_g": 0,
+    "tags": ["high-protein", "non-veg", "low-fat", "weight-loss", "muscle-gain", "lean-protein"]
+  },
+  {
+    "name": "Salmon",
+    "category": "Fish",
+    "calories_per_100g": 208,
+    "protein_g": 20,
+    "carbs_g": 0,
+    "fat_g": 13,
+    "fiber_g": 0,
+    "tags": ["high-protein", "non-veg", "omega-3", "heart-healthy", "brain-health", "anti-inflammatory"]
+  },
+  {
+    "name": "Tuna (canned)",
+    "category": "Fish",
+    "calories_per_100g": 116,
+    "protein_g": 26,
+    "carbs_g": 0,
+    "fat_g": 1,
+    "fiber_g": 0,
+    "tags": ["high-protein", "non-veg", "low-fat", "weight-loss", "omega-3"]
+  },
+  {
+    "name": "Eggs",
+    "category": "Dairy & Eggs",
+    "calories_per_100g": 155,
+    "protein_g": 13,
+    "carbs_g": 1.1,
+    "fat_g": 11,
+    "fiber_g": 0,
+    "tags": ["high-protein", "vegetarian", "complete-protein", "breakfast", "choline-rich"]
+  },
+  {
+    "name": "Greek Yogurt",
+    "category": "Dairy & Eggs",
+    "calories_per_100g": 59,
+    "protein_g": 10,
+    "carbs_g": 3.6,
+    "fat_g": 0.4,
+    "fiber_g": 0,
+    "tags": ["high-protein", "vegetarian", "probiotic", "gut-health", "low-fat", "breakfast", "snack"]
+  },
+  {
+    "name": "Milk (whole)",
+    "category": "Dairy & Eggs",
+    "calories_per_100g": 61,
+    "protein_g": 3.2,
+    "carbs_g": 4.8,
+    "fat_g": 3.3,
+    "fiber_g": 0,
+    "tags": ["vegetarian", "calcium-rich", "bone-health", "breakfast"]
+  },
+  {
+    "name": "Paneer",
+    "category": "Dairy & Eggs",
+    "calories_per_100g": 265,
+    "protein_g": 18,
+    "carbs_g": 1.2,
+    "fat_g": 21,
+    "fiber_g": 0,
+    "tags": ["high-protein", "vegetarian", "calcium-rich", "low-carb", "indian-cuisine"]
+  },
+  {
+    "name": "Spinach",
+    "category": "Vegetable",
+    "calories_per_100g": 23,
+    "protein_g": 2.9,
+    "carbs_g": 3.6,
+    "fat_g": 0.4,
+    "fiber_g": 2.2,
+    "tags": ["low-calorie", "vegan", "iron-rich", "vitamin-k", "antioxidant-rich", "weight-loss", "leafy-green"]
+  },
+  {
+    "name": "Broccoli",
+    "category": "Vegetable",
+    "calories_per_100g": 34,
+    "protein_g": 2.8,
+    "carbs_g": 7,
+    "fat_g": 0.4,
+    "fiber_g": 2.6,
+    "tags": ["low-calorie", "vegan", "vitamin-c", "fiber-rich", "cancer-protective", "weight-loss"]
+  },
+  {
+    "name": "Carrot",
+    "category": "Vegetable",
+    "calories_per_100g": 41,
+    "protein_g": 0.9,
+    "carbs_g": 10,
+    "fat_g": 0.2,
+    "fiber_g": 2.8,
+    "tags": ["low-calorie", "vegan", "vitamin-a", "beta-carotene", "eye-health", "snack"]
+  },
+  {
+    "name": "Sweet Potato",
+    "category": "Vegetable",
+    "calories_per_100g": 86,
+    "protein_g": 1.6,
+    "carbs_g": 20,
+    "fat_g": 0.1,
+    "fiber_g": 3,
+    "tags": ["vegan", "complex-carbs", "vitamin-a", "energy", "fiber-rich", "weight-loss"]
+  },
+  {
+    "name": "Tomato",
+    "category": "Vegetable",
+    "calories_per_100g": 18,
+    "protein_g": 0.9,
+    "carbs_g": 3.9,
+    "fat_g": 0.2,
+    "fiber_g": 1.2,
+    "tags": ["low-calorie", "vegan", "lycopene", "antioxidant-rich", "heart-healthy", "vitamin-c"]
+  },
+  {
+    "name": "Cucumber",
+    "category": "Vegetable",
+    "calories_per_100g": 15,
+    "protein_g": 0.7,
+    "carbs_g": 3.6,
+    "fat_g": 0.1,
+    "fiber_g": 0.5,
+    "tags": ["low-calorie", "vegan", "hydrating", "weight-loss", "snack"]
+  },
+  {
+    "name": "Bell Pepper",
+    "category": "Vegetable",
+    "calories_per_100g": 31,
+    "protein_g": 1,
+    "carbs_g": 6,
+    "fat_g": 0.3,
+    "fiber_g": 2.1,
+    "tags": ["low-calorie", "vegan", "vitamin-c", "antioxidant-rich", "weight-loss"]
+  },
+  {
+    "name": "Banana",
+    "category": "Fruit",
+    "calories_per_100g": 89,
+    "protein_g": 1.1,
+    "carbs_g": 23,
+    "fat_g": 0.3,
+    "fiber_g": 2.6,
+    "tags": ["vegan", "energy", "potassium-rich", "pre-workout", "breakfast", "snack"]
+  },
+  {
+    "name": "Apple",
+    "category": "Fruit",
+    "calories_per_100g": 52,
+    "protein_g": 0.3,
+    "carbs_g": 14,
+    "fat_g": 0.2,
+    "fiber_g": 2.4,
+    "tags": ["vegan", "low-calorie", "fiber-rich", "antioxidant-rich", "weight-loss", "snack", "heart-healthy"]
+  },
+  {
+    "name": "Avocado",
+    "category": "Fruit",
+    "calories_per_100g": 160,
+    "protein_g": 2,
+    "carbs_g": 9,
+    "fat_g": 15,
+    "fiber_g": 7,
+    "tags": ["vegan", "healthy-fat", "heart-healthy", "potassium-rich", "fiber-rich", "keto"]
+  },
+  {
+    "name": "Blueberries",
+    "category": "Fruit",
+    "calories_per_100g": 57,
+    "protein_g": 0.7,
+    "carbs_g": 14,
+    "fat_g": 0.3,
+    "fiber_g": 2.4,
+    "tags": ["vegan", "antioxidant-rich", "low-calorie", "brain-health", "heart-healthy", "snack"]
+  },
+  {
+    "name": "Orange",
+    "category": "Fruit",
+    "calories_per_100g": 47,
+    "protein_g": 0.9,
+    "carbs_g": 12,
+    "fat_g": 0.1,
+    "fiber_g": 2.4,
+    "tags": ["vegan", "vitamin-c", "immune-boost", "low-calorie", "snack"]
+  },
+  {
+    "name": "Almonds",
+    "category": "Nut & Seed",
+    "calories_per_100g": 579,
+    "protein_g": 21,
+    "carbs_g": 22,
+    "fat_g": 50,
+    "fiber_g": 12.5,
+    "tags": ["high-protein", "vegan", "healthy-fat", "vitamin-e", "heart-healthy", "snack", "muscle-gain"]
+  },
+  {
+    "name": "Walnuts",
+    "category": "Nut & Seed",
+    "calories_per_100g": 654,
+    "protein_g": 15,
+    "carbs_g": 14,
+    "fat_g": 65,
+    "fiber_g": 6.7,
+    "tags": ["vegan", "omega-3", "brain-health", "heart-healthy", "healthy-fat", "snack"]
+  },
+  {
+    "name": "Chia Seeds",
+    "category": "Nut & Seed",
+    "calories_per_100g": 486,
+    "protein_g": 17,
+    "carbs_g": 42,
+    "fat_g": 31,
+    "fiber_g": 34,
+    "tags": ["high-fiber", "vegan", "omega-3", "complete-protein", "weight-loss", "heart-healthy"]
+  },
+  {
+    "name": "Flaxseeds",
+    "category": "Nut & Seed",
+    "calories_per_100g": 534,
+    "protein_g": 18,
+    "carbs_g": 29,
+    "fat_g": 42,
+    "fiber_g": 27,
+    "tags": ["high-fiber", "vegan", "omega-3", "heart-healthy", "hormonal-balance"]
+  },
+  {
+    "name": "Olive Oil",
+    "category": "Oil & Fat",
+    "calories_per_100g": 884,
+    "protein_g": 0,
+    "carbs_g": 0,
+    "fat_g": 100,
+    "fiber_g": 0,
+    "tags": ["vegan", "healthy-fat", "monounsaturated", "heart-healthy", "anti-inflammatory", "mediterranean"]
+  },
+  {
+    "name": "Coconut Oil",
+    "category": "Oil & Fat",
+    "calories_per_100g": 862,
+    "protein_g": 0,
+    "carbs_g": 0,
+    "fat_g": 100,
+    "fiber_g": 0,
+    "tags": ["vegan", "medium-chain-triglycerides", "energy", "keto"]
+  },
+  {
+    "name": "Green Tea",
+    "category": "Beverage",
+    "calories_per_100g": 1,
+    "protein_g": 0,
+    "carbs_g": 0,
+    "fat_g": 0,
+    "fiber_g": 0,
+    "tags": ["vegan", "antioxidant-rich", "metabolism-boost", "weight-loss", "anti-inflammatory", "catechins"]
+  },
+  {
+    "name": "Turmeric",
+    "category": "Spice",
+    "calories_per_100g": 354,
+    "protein_g": 8,
+    "carbs_g": 65,
+    "fat_g": 10,
+    "fiber_g": 21,
+    "tags": ["vegan", "anti-inflammatory", "curcumin", "antioxidant-rich", "immune-boost", "joint-health"]
+  },
+  {
+    "name": "Ginger",
+    "category": "Spice",
+    "calories_per_100g": 80,
+    "protein_g": 1.8,
+    "carbs_g": 18,
+    "fat_g": 0.8,
+    "fiber_g": 2,
+    "tags": ["vegan", "anti-inflammatory", "digestion", "nausea-relief", "immune-boost"]
+  },
+  {
+    "name": "Garlic",
+    "category": "Spice",
+    "calories_per_100g": 149,
+    "protein_g": 6.4,
+    "carbs_g": 33,
+    "fat_g": 0.5,
+    "fiber_g": 2.1,
+    "tags": ["vegan", "immune-boost", "heart-healthy", "anti-inflammatory", "blood-pressure"]
+  },
+  {
+    "name": "Cottage Cheese",
+    "category": "Dairy & Eggs",
+    "calories_per_100g": 98,
+    "protein_g": 11,
+    "carbs_g": 3.4,
+    "fat_g": 4.3,
+    "fiber_g": 0,
+    "tags": ["high-protein", "vegetarian", "low-carb", "calcium-rich", "weight-loss", "snack"]
+  },
+  {
+    "name": "Peanut Butter",
+    "category": "Nut & Seed",
+    "calories_per_100g": 588,
+    "protein_g": 25,
+    "carbs_g": 20,
+    "fat_g": 50,
+    "fiber_g": 6,
+    "tags": ["high-protein", "vegan", "healthy-fat", "energy", "muscle-gain", "snack"]
+  },
+  {
+    "name": "Cauliflower",
+    "category": "Vegetable",
+    "calories_per_100g": 25,
+    "protein_g": 1.9,
+    "carbs_g": 5,
+    "fat_g": 0.3,
+    "fiber_g": 2,
+    "tags": ["low-calorie", "vegan", "low-carb", "weight-loss", "vitamin-c", "keto"]
+  },
+  {
+    "name": "Kale",
+    "category": "Vegetable",
+    "calories_per_100g": 49,
+    "protein_g": 4.3,
+    "carbs_g": 9,
+    "fat_g": 0.9,
+    "fiber_g": 3.6,
+    "tags": ["low-calorie", "vegan", "iron-rich", "calcium-rich", "vitamin-k", "leafy-green", "antioxidant-rich"]
+  },
+  {
+    "name": "Mango",
+    "category": "Fruit",
+    "calories_per_100g": 60,
+    "protein_g": 0.8,
+    "carbs_g": 15,
+    "fat_g": 0.4,
+    "fiber_g": 1.6,
+    "tags": ["vegan", "vitamin-c", "vitamin-a", "energy", "immune-boost", "tropical"]
+  },
+  {
+    "name": "Watermelon",
+    "category": "Fruit",
+    "calories_per_100g": 30,
+    "protein_g": 0.6,
+    "carbs_g": 7.6,
+    "fat_g": 0.2,
+    "fiber_g": 0.4,
+    "tags": ["vegan", "low-calorie", "hydrating", "lycopene", "weight-loss", "snack"]
+  },
+  {
+    "name": "Kidney Beans",
+    "category": "Legume",
+    "calories_per_100g": 127,
+    "protein_g": 8.7,
+    "carbs_g": 22.8,
+    "fat_g": 0.5,
+    "fiber_g": 6.4,
+    "tags": ["high-protein", "high-fiber", "vegan", "vegetarian", "iron-rich", "weight-loss"]
+  },
+  {
+    "name": "Mushrooms",
+    "category": "Vegetable",
+    "calories_per_100g": 22,
+    "protein_g": 3.1,
+    "carbs_g": 3.3,
+    "fat_g": 0.3,
+    "fiber_g": 1,
+    "tags": ["low-calorie", "vegan", "vegetarian", "immune-boost", "vitamin-d", "umami"]
+  },
+  {
+    "name": "Pumpkin Seeds",
+    "category": "Nut & Seed",
+    "calories_per_100g": 559,
+    "protein_g": 30,
+    "carbs_g": 11,
+    "fat_g": 49,
+    "fiber_g": 6,
+    "tags": ["high-protein", "vegan", "magnesium-rich", "zinc-rich", "healthy-fat", "snack", "sleep-health"]
+  },
+  {
+    "name": "Beetroot",
+    "category": "Vegetable",
+    "calories_per_100g": 43,
+    "protein_g": 1.6,
+    "carbs_g": 10,
+    "fat_g": 0.2,
+    "fiber_g": 2.8,
+    "tags": ["vegan", "nitrate-rich", "stamina", "heart-healthy", "blood-pressure", "detox"]
+  },
+  {
+    "name": "Pomegranate",
+    "category": "Fruit",
+    "calories_per_100g": 83,
+    "protein_g": 1.7,
+    "carbs_g": 19,
+    "fat_g": 1.2,
+    "fiber_g": 4,
+    "tags": ["vegan", "antioxidant-rich", "heart-healthy", "anti-inflammatory", "fiber-rich"]
+  }
+]
